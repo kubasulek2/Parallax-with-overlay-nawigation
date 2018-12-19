@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+  user-select: none;
+}
+html {
+  font-size: 60%;
+
+  @include mQ(1024px){
+    font-size: 70%;
+  }
+  @include mQ(1200px){
+    font-size: 80%;
+  }
+  @include mQ(1400px){
+    font-size: 90%;
+  }
+
+  body {
+    font-size: 100%;
+
+  }
+}
