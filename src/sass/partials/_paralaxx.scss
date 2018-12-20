@@ -34,15 +34,26 @@
       width: 100%;
       background: white;
     }
+    &.headerScrolled::after{
+
+    }
     #title{
       color: $base-dark;
       font-size: 4em;
       z-index: 2;
-      position: absolute;
-      text-align: center;
-      top: 50%;
+      position: fixed;
+      text-align: left;
+      top: 30vh;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: top 500ms ease, left 500ms ease, transform 500ms ease, text-align 500ms ease;
+      &.pinned{
+        text-align: left;
+        position: fixed;
+        top: 1rem;
+        left: 2rem;
+        transform: initial;
+      }
     }
   }
   #content{
