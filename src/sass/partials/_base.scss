@@ -9,7 +9,9 @@ html {
     height: 100%;
     font-family: 'Lato';
     font-size: 60%;
-    position: relative;
+    text-align: justify;
+    color: $base-black;
+    //position: relative;
 
     @include mQ(1024px){
       font-size: 70%;

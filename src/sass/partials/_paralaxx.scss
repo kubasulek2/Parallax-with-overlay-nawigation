@@ -4,19 +4,49 @@
 
     .fa-bars {
       font-size: 4em;
-      color: #2a2f2f;
+      color: $base-dark;
       position: fixed;
       top: 1rem;
-      right: 2rem;
+      right: 3rem;
       transition: all .2s ease;
       cursor: pointer;
+      z-index: 2;
       &:hover {
         font-size: 4.5em;
         top: 0.75rem;
-        right: 1.75rem;
-        color: lighten(#2a2f2f, 10%);
-        text-shadow: .1rem .2rem .4rem #aaa;
+        right: 2.75rem;
+        color: lighten($base-dark, 5%);
+        text-shadow: .2rem .3rem .8rem rgba(0,0,0, .6);
       }
     }
   }
+
+  #header{
+    height: 60vh;
+    background: url("../../images/mountauns.jpeg") no-repeat left bottom fixed;
+    background-size: auto;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      opacity: .2;
+      height: 100%;
+      width: 100%;
+      background: white;
+    }
+    #title{
+      color: $base-dark;
+      font-size: 4em;
+      z-index: 2;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  #content{
+  height: 100em;
+  }
+
 }
