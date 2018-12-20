@@ -92,13 +92,62 @@
   #content1{
     display: flex;
     justify-content: center;
+    position: relative;
+
+    .side-menu-container{
+      position: absolute;
+      top: 30%;
+      left: -0.3em;
+      transform: translateY(-50%);
+      width: 2em;
+      @include mQ(1024px){
+        top: 50%;
+      }
+      .side-menu{
+        height: 4em;
+        margin-top: 1rem;
+        width: 3em;
+        background: darken($add-ons, 10%);
+        opacity: .6;
+        cursor: pointer;
+        border-radius: 0.3em;
+        transition: .5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mQ(1024px){
+          opacity: 1;
+        }
+        p{
+          color: $milky-white;
+          opacity: 0;
+          transition: .5s ease;
+        }
+        &:hover{
+          width: 400%;
+          opacity: 1;
+        }
+        &:hover > p{
+          opacity: 1;
+        }
+        .fa-angle-right{
+          color: $milky-white;
+          font-size: 2em;
+          padding-right: 1em;
+        }
+        &:hover .fa-angle-right{
+          display: none;
+        }
+      }
+
+    }
 
     article{
       width: 95%;
       @include mQ(1024px){
         width: 80%;
       }
-      div {
+      .border-container {
         display: flex;
         justify-content: center;
         h2 {
