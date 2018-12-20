@@ -1,0 +1,23 @@
+.parallax{
+  //position: relative;
+
+  #hamburger{
+
+    .fa-bars {
+      font-size: 4em;
+      color: #2a2f2f;
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      transition: all .2s ease;
+      cursor: pointer;
+      &:hover {
+        font-size: 4.5em;
+        top: 0.75rem;
+        right: 1.75rem;
+        color: lighten(#2a2f2f, 10%);
+        text-shadow: .1rem .2rem .4rem #aaa;
+      }
+    }
+  }
+}
