@@ -3,10 +3,13 @@
   user-select: none;
 }
 html {
-
+  height: 100%;
 
   body {
+    height: 100%;
+    font-family: 'Lato';
     font-size: 60%;
+    position: relative;
 
     @include mQ(1024px){
       font-size: 70%;
@@ -20,7 +23,5 @@ html {
     @include mQ(1600px){
       font-size: 100%;
     }
-    font-family: 'Lato';
-
   }
 }
