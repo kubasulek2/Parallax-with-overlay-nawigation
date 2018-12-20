@@ -43,19 +43,7 @@
 
   #header{
     height: 60vh;
-    background: url("../../images/mountauns.jpeg") no-repeat left bottom fixed;
-    background-size: auto;
-    position: relative;
-    &::after{
-      content: '';
-      display: block;
-      position: absolute;
-      opacity: .2;
-      height: 100%;
-      width: 100%;
-      background: white;
-      transition: .3s ease;
-    }
+    @include parallax($url1,'left','bottom');
     &.headerScroll::after{
       opacity: .5;
     }
@@ -174,7 +162,15 @@
 
   }
   #content2{
-    height: 100vh;
+    height: 50vh;
+    background: $milky-white;
+    opacity: 0.8;
+  }
+
+  #footer{
+    height: 60vh;
+    @include parallax($url2,'right',-20%)
+
   }
 
 }
