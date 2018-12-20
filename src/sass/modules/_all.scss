@@ -3,6 +3,25 @@
     @content
   }
 }
+@mixin border{
+  &::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ed6155;
+    transition: all 0.5s;
+  }
+  &.scrolled::after{
+    left: 0;
+    width: 100%;
+  }
+
+}
+
 @font-face {
   font-family: 'Lato';
   src: url('../../fonts/Lato-Bold.eot');

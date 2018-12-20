@@ -127,6 +127,10 @@
           width: 400%;
           opacity: 1;
         }
+        &:active{
+          transform: translateY(3px);
+        }
+
         &:hover > p{
           opacity: 1;
         }
@@ -154,26 +158,17 @@
           padding: 3em .5em.5em .5em;
           position: relative;
           transition: 0.5s;
-          &::after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ed6155;
-            transition: width 0.3s;
-          }
+          @include border;
           &.scrolled{
             letter-spacing: 1rem;
-            &::after{
-            width: 100%;
-          }}
+          }
         }
       }
       p {
-        padding-top: 5rem;
+        position: relative;
+        padding: 5rem 0 2rem 0;
+        @include border;
+
       }
     }
 

@@ -1,12 +1,24 @@
 $( () => {
-  let scrollPosition;
   const title = $('#title');
   const header = $('#header');
   const navBar = $('#fixed');
   const hamburger = $('#hamburger');
   const borderElement = $('.border');
+  const article = $('#content1');
   let lastScrollTop = 0;
-  let titleTop = title.offset().top + title.height()/2;
+
+
+  const detectBottom = function(el) {
+    let elementTop = el.offset().top;
+    let elementBottom = elementTop + el.outerHeight();
+
+    let viewportTop = $(window).scrollTop();
+    let viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom < viewportBottom - 100
+  };
+
+
 
 
 
@@ -27,7 +39,12 @@ $( () => {
       if (scrollTop > header.height()/2){
         borderElement.addClass("scrolled")
       }
+      if (detectBottom(article)){
+        article.find('p').addClass('scrolled')
+      }
     } else{
+      // upscroll code
+
       if ( scrollTop <= header.height()){
         navBar.removeClass('scrolled');
         title.removeClass('scrolled');
@@ -39,6 +56,9 @@ $( () => {
       }
       if(scrollTop < header.height()/2){
         borderElement.removeClass("scrolled")
+      }
+      if (!detectBottom(article)){
+        article.find('p').removeClass('scrolled')
       }
 
     }
