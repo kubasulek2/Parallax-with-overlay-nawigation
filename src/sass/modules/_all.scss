@@ -62,3 +62,12 @@ $url2 : "../../images/travel.jpeg";
   font-weight: normal;
   font-style: normal;
 }
+
+@keyframes arrows {
+  50%{
+    top: -100%;
+  }
+  100%{
+    top: 0;
+  }
+}

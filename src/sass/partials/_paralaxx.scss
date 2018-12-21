@@ -44,7 +44,7 @@
   #header{
     height: 60vh;
     @include parallax($url1,'left','bottom');
-    &.headerScroll::after{
+    &.scrolled::after{
       opacity: .5;
     }
     #title{
@@ -165,11 +165,34 @@
     height: 50vh;
     background: $milky-white;
     opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #arrow-container{
+      font-size: 6em;
+      width: 1em;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 1.2em;
+      overflow: hidden;
+      position: relative;
+      visibility: hidden;
+      #arrows{
+        position: absolute;
+        top: -200%;
+        animation: arrows 1s linear 1 forwards;
+        .fas{
+        margin-bottom: .2em;
+        }
+      }
+    }
   }
 
   #footer{
     height: 60vh;
-    @include parallax($url2,'right',-20%)
+    @include parallax($url2,'right',-20%);
 
   }
 
