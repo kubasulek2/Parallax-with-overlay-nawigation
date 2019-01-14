@@ -9,14 +9,32 @@ $( () => {
   const footer = $('#footer');
   const menu = $('.menu');
   const menuLine = $('.menu-line');
+  const menuItem = $('.item');
   let lastScrollTop = 0;
+  let menuCounter = 1;
+
+  function showMenuItems (){
+    const id = setInterval(function () {
+      if( menuCounter >= 10) clearInterval(id);
+      menuItem.each(function (index,el) {
+        if(el.className === `item item-${menuCounter}`){
+          $(el).addClass("show");
+        }
+      });
+      menuCounter++;
+    },100)
+  }
+
 
 
   hamburger.on("click", function () {
-    menu.addClass("height");
+    menu.addClass("show");
     setTimeout(function () {
-      menuLine.addClass('height')
-    },305)
+      menuLine.addClass('show');
+    },305);
+    setTimeout(function () {
+      showMenuItems()
+    },510)
   });
   const detectElement = function(el,position = "top",delay = 0) {
 

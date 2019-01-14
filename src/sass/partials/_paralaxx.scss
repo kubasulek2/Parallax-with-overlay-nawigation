@@ -12,9 +12,6 @@
       background: lighten($base-dark,10%);
     }
   }
-  #hamburger:hover + #fixed{
-    height: 8rem;
-  }
   #hamburger{
 
     .fa-bars {
@@ -27,7 +24,7 @@
       cursor: pointer;
       z-index: 2;
       &:hover {
-        font-size: 4.5em;
+        font-size: 4.5rem;
         top: 0.75rem;
         right: 2.75rem;
         color: lighten($base-dark, 10%);
