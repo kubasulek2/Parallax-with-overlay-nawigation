@@ -61,12 +61,10 @@
         top: 30vh;
         left: 50%;
         transform: translate(-50%, -50%);
-        transition: top 300ms ease, left 300ms ease, transform 300ms ease, text-align 500ms ease;
+        transition: .3s ease-out;
       }
       &.pinned{
         pre {
-          text-align: left;
-          position: fixed;
           top: 1rem;
           left: 2rem;
           transform: initial;
