@@ -206,31 +206,52 @@
       font-size: 5em;
       transition: .5s ease-out;
       cursor: pointer;
+      // way to bypass font-awesome vertical padding
+      &:after{
+        content: '';
+        display: block;
+        z-index: -1;
+        width: .79em;
+        height: .82em;
+        background: #f1f1f1;
+        position: absolute;
+        top: 13%;
+        left: 8%;
+        border-radius: 11%;
 
+      }
 
+      .fab{
+        transition: .5s;
+      }
       &#media-1{
         left: 3rem;
+        color: #3b5998;
+
       }
       &#media-2{
         left: 50%;
         transform: translate(-50%,50%);
+        color: #00aced;
       }
       &#media-3{
         right: 3rem;
+        color: #cc181e;
+
       }
 
     }
     &.scrolled{
-    div{
-      top: calc(50% - 1em);
-      &#media-1{
-        left: calc(50% - 1.3em);
-      }
-      &#media-3{
-        right: calc(50% - 1.6em);
+      div{
+        top: calc(50% - 1em);
+        &#media-1{
+          left: calc(50% - 1.6em);
+        }
+        &#media-3{
+          right: calc(50% - 1.6em);
+        }
       }
     }
-  }
   }
 
 }
