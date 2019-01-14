@@ -6,13 +6,15 @@
     position: fixed;
     background: transparent;
     z-index: 1;
-    transition: all 1s ease;
+    transition: background 1s ease, height .3s;
 
     &.scrolled{
       background: lighten($base-dark,10%);
     }
   }
-
+  #hamburger:hover + #fixed{
+    height: 8rem;
+  }
   #hamburger{
 
     .fa-bars {

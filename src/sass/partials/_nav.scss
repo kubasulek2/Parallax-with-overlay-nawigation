@@ -17,11 +17,13 @@
     height: 90%;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     .menu-column-wrap {
       width: 40%;
       height: 100%;
+      font-size: 5rem;
+      color: #fefefe;
       &.middle{
         width: 2px;
         height: 100%;
@@ -36,7 +38,7 @@
             display: block;
             position: absolute;
             top: 100%;
-            background: white;
+            background: #fefefe;
             transition: top .2s ease-out;
           }
           &.height:after{
