@@ -198,7 +198,39 @@
     &.scrolled::after{
       opacity: .5;
     }
+    div{
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      transform: translateY(50%);
+      font-size: 5em;
+      transition: .5s ease-out;
+      cursor: pointer;
 
+
+      &#media-1{
+        left: 3rem;
+      }
+      &#media-2{
+        left: 50%;
+        transform: translate(-50%,50%);
+      }
+      &#media-3{
+        right: 3rem;
+      }
+
+    }
+    &.scrolled{
+    div{
+      top: calc(50% - 1em);
+      &#media-1{
+        left: calc(50% - 1.3em);
+      }
+      &#media-3{
+        right: calc(50% - 1.6em);
+      }
+    }
+  }
   }
 
 }

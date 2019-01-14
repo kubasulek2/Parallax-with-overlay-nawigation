@@ -62,17 +62,16 @@ $( () => {
         article.find('p').addClass('scrolled')
       }
       if(detectElement(arrows,'center', -100)){
-        console.log('arrows');
         arrows.css("visibility", 'visible')
           .find("#arrows")
           .addClass("animate");
         setTimeout(function () {
           $('#arrows').removeClass('animate')
         }, 1550)
-      };
-      if(detectElement(footer, 'top') ){
-        console.log('aaa');
-      };
+      }
+      if(detectElement(footer, 'center', -100) ){
+        footer.addClass('scrolled')
+      }
     } else{
       // upscroll code
 
@@ -88,8 +87,11 @@ $( () => {
       if(scrollTop < header.height()/2){
         borderElement.removeClass("scrolled")
       }
-      if (!detectElement(article,'bottom',100)){
+      if (!detectElement(article,'bottom',200)){
         article.find('p').removeClass('scrolled')
+      }
+      if(!detectElement(footer, 'bottom')){
+        footer.removeClass("scrolled")
       }
 
 
