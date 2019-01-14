@@ -64,10 +64,16 @@ $url2 : "../../images/travel.jpeg";
 }
 
 @keyframes arrows {
+  25%{
+    top: -200%;
+  }
   50%{
     top: -100%;
   }
-  100%{
+  75%{
     top: 0;
   }
+  100%{
+    top: 100%;
+     }
 }

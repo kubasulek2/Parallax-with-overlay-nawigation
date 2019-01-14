@@ -99,10 +99,14 @@
         opacity: .6;
         cursor: pointer;
         border-radius: 0.3em;
-        transition: .5s ease;
+        transition: all .5s ease;
         display: flex;
         align-items: center;
         justify-content: center;
+        &:hover{
+          width: 400%;
+          opacity: 1
+        }
         @include mQ(1024px){
           opacity: 1;
         }
@@ -110,10 +114,6 @@
           color: $milky-white;
           opacity: 0;
           transition: .5s ease;
-        }
-        &:hover{
-          width: 400%;
-          opacity: 1;
         }
         &:active{
           transform: translateY(3px);
@@ -181,8 +181,10 @@
       visibility: hidden;
       #arrows{
         position: absolute;
-        top: -200%;
-        animation: arrows 1s linear 1 forwards;
+        top: -300%;
+        &.animate{
+          animation: arrows 1.5s linear 1 forwards;
+        }
         .fas{
         margin-bottom: .2em;
         }
@@ -193,6 +195,9 @@
   #footer{
     height: 60vh;
     @include parallax($url2,'right',-20%);
+    &.scrolled::after{
+      opacity: .5;
+    }
 
   }
 

@@ -6,6 +6,7 @@ $( () => {
   const borderElement = $('.border');
   const article = $('#content1');
   const arrows = $('#arrow-container');
+  const footer = $('#footer');
   let lastScrollTop = 0;
 
 
@@ -28,7 +29,7 @@ $( () => {
         return elementTop < viewportBottom - delay;
 
       case 'center':
-        return (elementTop - el.outerHeight()/2) < viewportBottom - delay;
+        return (elementTop + el.outerHeight()/2) < viewportBottom - delay;
 
       case 'bottom':
         return elementBottom < viewportBottom - delay
@@ -60,9 +61,18 @@ $( () => {
       if (detectElement(article,'bottom',100)){
         article.find('p').addClass('scrolled')
       }
-      if(detectElement(arrows,'middle')){
-        arrows.css('visibility','visible')
-      }
+      if(detectElement(arrows,'center', -100)){
+        console.log('arrows');
+        arrows.css("visibility", 'visible')
+          .find("#arrows")
+          .addClass("animate");
+        setTimeout(function () {
+          $('#arrows').removeClass('animate')
+        }, 1550)
+      };
+      if(detectElement(footer, 'top') ){
+        console.log('aaa');
+      };
     } else{
       // upscroll code
 
@@ -73,7 +83,7 @@ $( () => {
       }
       if (scrollTop < 100){
         title.removeClass("pinned");
-        header.removeClass('headerScroll');
+        header.removeClass('scrolled');
       }
       if(scrollTop < header.height()/2){
         borderElement.removeClass("scrolled")
@@ -81,6 +91,7 @@ $( () => {
       if (!detectElement(article,'bottom',100)){
         article.find('p').removeClass('scrolled')
       }
+
 
     }
     lastScrollTop = st;
