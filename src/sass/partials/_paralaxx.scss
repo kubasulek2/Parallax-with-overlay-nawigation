@@ -201,7 +201,7 @@
     div{
       position: absolute;
       z-index: 5;
-      top: 0;
+      top: -1rem;
       transform: translateY(50%);
       font-size: 5em;
       transition: .5s ease-out;
@@ -218,25 +218,42 @@
         top: 13%;
         left: 8%;
         border-radius: 11%;
-
+        transition: .5s ease-out;
       }
 
       .fab{
-        transition: .5s;
+
       }
       &#media-1{
         left: 3rem;
         color: #3b5998;
-
+        &:hover{
+          color: #a0a0a0;
+          &:after{
+            background: #3b5998;
+          }
+        }
       }
       &#media-2{
         left: 50%;
         transform: translate(-50%,50%);
         color: #00aced;
+        &:hover{
+          color: #f1f1f1;
+          &:after{
+            background: #00aced;
+          }
+        }
       }
       &#media-3{
         right: 3rem;
         color: #cc181e;
+        &:hover{
+          color: #f1f1f1;
+          &:after{
+            background: #cc181e;
+          }
+        }
 
       }
 
