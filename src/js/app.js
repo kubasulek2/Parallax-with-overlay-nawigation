@@ -7,10 +7,17 @@ $( () => {
   const article = $('#content1');
   const arrows = $('#arrow-container');
   const footer = $('#footer');
+  const menu = $('.menu');
+  const menuLine = $('.menu-line');
   let lastScrollTop = 0;
 
 
-
+  hamburger.on("click", function () {
+    menu.addClass("height");
+    setTimeout(function () {
+      menuLine.addClass('height')
+    },305)
+  });
   const detectElement = function(el,position = "top",delay = 0) {
 
     if ( !(position === "top" || position === 'bottom' || position === 'center') ){
@@ -69,7 +76,7 @@ $( () => {
           $('#arrows').removeClass('animate')
         }, 1550)
       }
-      if(detectElement(footer, 'center', -100) ){
+      if(detectElement(footer, 'center') ){
         footer.addClass('scrolled')
       }
     } else{
