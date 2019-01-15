@@ -138,15 +138,21 @@ $( () => {
       if(!detectElement(footer, 'bottom')){
         footer.removeClass("scrolled")
       }
-
-
     }
-    lastScrollTop = st;
 
+    lastScrollTop = st;
   }
 
 
   $(document).on('scroll',scroll);
   hamburger.on("click", handleMenu);
+  menuItem.on('mouseenter', function () {
+    $(this).find('.underline').animate({'left': 0},200)
+  });
+  menuItem.on('mouseleave', function () {
+    $(this).find('.underline').animate({'left': '100%'},200, function () {
+      $(this).css('left', '-100%')
+    })
+  })
 
 });
