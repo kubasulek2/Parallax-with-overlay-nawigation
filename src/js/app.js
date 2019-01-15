@@ -12,7 +12,7 @@ $( () => {
   let lastScrollTop = 0;
   let menuCounter = 1;
 
-  function showMenuItems (){
+  const showMenuItems = function(){
 
     const id = setInterval(function () {
       menuItem.each(function (index,el) {
@@ -20,56 +20,47 @@ $( () => {
           $(el).addClass("show");
         }
       });
-      if( menuCounter >= 10) {
+      menuCounter++;
+      if( menuCounter >= 11) {
         clearInterval(id);
         menuCounter = 1;
       }
-      menuCounter++;
     },100)
-  }
+  };
 
-
-
-  hamburger.on("click", function () {
-    console.log('aaaa');
+  const handleMenu = function () {
     const verticalBeam = $('#vertical');
     const horizontalBeam = $('#horizontal');
     const close = $('#close');
     const menu = $('.menu');
 
     menu.addClass("show");
+
     setTimeout(function () {
       menuLine.addClass('show');
     },305);
+
     setTimeout(function () {
       showMenuItems()
     },510);
+
     setTimeout(function () {
       horizontalBeam.addClass('show');
       setTimeout(function() {verticalBeam.addClass('show')},200)
     },1515);
+
     setTimeout(function () {
       close.one('click', function () {
-        menu.fadeOut(600,'linear');
-        menuItem.fadeOut(600, 'linear');
-        menuLine.fadeOut(600,'linear');
-
-        setTimeout(function () {
-          menuLine.removeClass('show');
-          menu.removeClass('show');
-          horizontalBeam.removeClass('show');
-          verticalBeam.removeClass('show');
-          menuItem.each(function (index,el) {
-            $(el).removeClass("show");
-          });
-          menu.css("display", '');
-          menuItem.css("display", '');
-          menuLine.css("display", '');
-        },605)
-      })
+        menuLine.removeClass('show');
+        menu.removeClass('show');
+        horizontalBeam.removeClass('show');
+        verticalBeam.removeClass('show');
+        menuItem.removeClass("show");
+      });
     },1920)
 
-  });
+  };
+
   const detectElement = function(el,position = "top",delay = 0) {
 
     if ( !(position === "top" || position === 'bottom' || position === 'center') ){
@@ -94,11 +85,6 @@ $( () => {
         return elementBottom < viewportBottom - delay
     }
   };
-
-
-
-
-
 
   function scroll() {
     let scrollTop = $(this).scrollTop();
@@ -160,8 +146,7 @@ $( () => {
   }
 
 
-  $(document).on('scroll',scroll)
-
-
+  $(document).on('scroll',scroll);
+  hamburger.on("click", handleMenu);
 
 });
