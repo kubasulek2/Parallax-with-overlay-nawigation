@@ -5,6 +5,7 @@ const
 	uglify = require('gulp-uglify-es').default,
 	sourcemaps = require('gulp-sourcemaps'),
 	gulpResolveUrl = require('gulp-resolve-url');
+	browserify = require('gulp-browserify');
 
 gulp.task( 'styles', function () {
 	return gulp
@@ -30,8 +31,9 @@ gulp.task('vendorScripts', function() {
 gulp.task( 'scripts', function () {
 	return gulp
 		.src( [
-			'./src/js/!(vendor)**/!(app)*.js',
-			'./src/js/app.js'
+			'./src/js/!(vendor)**/!(main)*.js',
+			'./src/js/main.js',
+
 		] )
 		.pipe(sourcemaps.init())
 		.pipe( $.plumber() )

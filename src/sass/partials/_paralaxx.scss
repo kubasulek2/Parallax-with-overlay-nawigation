@@ -41,8 +41,24 @@
   }
 
   #header{
-    height: 60vh;
-    @include parallax($url1,'left','bottom');
+    height: 40vmax;
+    background: url($url-m1) center/cover no-repeat;
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      opacity: .2;
+      height: 100%;
+      width: 100%;
+      background: white;
+      transition: 1s ease;
+    }
+    @include mQ(850px){
+      height: 60vh;
+      @include parallax($url1,'left','bottom');
+
+    }
     &.scrolled::after{
       opacity: .5;
     }
@@ -85,6 +101,7 @@
       left: -0.3em;
       transform: translateY(-50%);
       width: 2em;
+      z-index: 3;
       @include mQ(1024px){
         top: 50%;
       }
@@ -100,7 +117,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover{
+        &:hover, &:active{
           width: 400%;
           opacity: 1
         }
@@ -116,7 +133,7 @@
           transform: translateY(3px);
         }
 
-        &:hover > p{
+        &:hover > p, &:active > p{
           opacity: 1;
         }
         .fa-angle-right{
@@ -124,7 +141,7 @@
           font-size: 2em;
           padding-right: 1em;
         }
-        &:hover .fa-angle-right{
+        &:hover .fa-angle-right, &:active .fa-angle-right{
           display: none;
         }
       }
@@ -190,8 +207,23 @@
   }
 
   #footer{
-    height: 60vh;
-    @include parallax($url2,'right',-20%);
+    height: 60vmax;
+    background: url($url-m2) top center/cover no-repeat;
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      opacity: .2;
+      height: 100%;
+      width: 100%;
+      background: white;
+      transition: 1s ease;
+    }
+    @include mQ(850px) {
+      height: 60vh;
+      @include parallax($url2, 'right', -20%);
+    }
     &.scrolled::after{
       opacity: .5;
     }
@@ -218,12 +250,12 @@
         transition: .5s ease-out;
       }
 
-      .fab{
-
-      }
       &#media-1{
-        left: 1em;
+        left: .3em;
         color: #3b5998;
+        @include mQ(850px){
+          left: 1em
+        }
         &:hover{
           color: #a0a0a0;
           &:after{
@@ -243,8 +275,11 @@
         }
       }
       &#media-3{
-        right: 1em;
+        right: .3em;
         color: #cc181e;
+        @include mQ(850px){
+          right: 1em
+        }
         &:hover{
           color: #f1f1f1;
           &:after{

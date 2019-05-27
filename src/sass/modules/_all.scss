@@ -1,5 +1,8 @@
 $url1 : "../../images/mountauns.jpeg";
 $url2 : "../../images/travel.jpeg";
+$url-m1 : "../images/mountains-mobile.jpg";
+$url-m2 : "../../images/travel-mobile.jpg";
+
 @mixin mQ($width) {
   @media only screen and (min-width: $width) {
     @content
@@ -24,7 +27,7 @@ $url2 : "../../images/travel.jpeg";
 
 }
 @mixin parallax($url,$posX, $posY){
-  background: url($url) no-repeat $posX $posY fixed;
+  background: url($url)  $posX $posY no-repeat fixed;
   background-size: auto;
   position: relative;
   &::after{
