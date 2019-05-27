@@ -5,7 +5,7 @@
     height: 6rem;
     position: fixed;
     background: transparent;
-    z-index: 1;
+    z-index: 3;
     transition: background 1s ease, height .3s;
 
     &.scrolled{
@@ -94,6 +94,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 
     .side-menu-container{
       position: absolute;
@@ -101,7 +102,7 @@
       left: -0.3em;
       transform: translateY(-50%);
       width: 2em;
-      z-index: 3;
+      z-index: 2;
       @include mQ(1024px){
         top: 50%;
       }
