@@ -13,6 +13,8 @@
     }
   }
   #hamburger{
+    z-index: 4;
+    position: relative;
 
     .fa-bars {
       font-size: 4rem;
